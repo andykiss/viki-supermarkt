@@ -16,12 +16,14 @@ public class KundenGen extends Thread {
             try {
                 sleep(getRandomDelay());
             } catch (InterruptedException e) {
+                interrupt();
                 break;
             }
 
             synchronized (kunden) {
                 kunden.offer(neuerKunde);
-                kunden.notifyAll();
+                System.out.println("Kunde: " + neuerKunde.getId() + " in Queue");
+                // kunden.notifyAll();
             }
         }
     }

@@ -11,7 +11,7 @@ public class Kunde {
     }
 
     public static Kunde einkaufen(){
-        int id = Kundennummer++;
+        int id = ++Kundennummer;
         double wert = getWarenwert();
         Kunde kunde = new Kunde(id, wert);
 
@@ -28,4 +28,7 @@ public class Kunde {
         return warenwert;
     }
 
+    public int getId() {
+        return id;
+    }
 }
